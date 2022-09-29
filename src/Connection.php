@@ -235,7 +235,7 @@ class Connection extends Component
     public function getDefaultDatabaseName()
     {
         if ($this->_defaultDatabaseName === null) {
-            if (preg_match('/^mongodb:\\/\\/.+\\/([^?&]+)/s', $this->dsn, $matches)) {
+            if (preg_match('/^mongodb(?:\+srv)?:\\/\\/.+\\/([^?&]+)/s', $this->dsn, $matches)) {
                 $this->_defaultDatabaseName = $matches[1];
             } else {
                 throw new InvalidConfigException("Unable to determine default database name from dsn.");
@@ -509,7 +509,7 @@ class Connection extends Component
      */
     public function startSessionOnce($sessionOptions = [])
     {
-        if ($this->getInSession()) {   
+        if ($this->getInSession()) {
             return $this->getSession();
         }
         return $this->startSession($sessionOptions);

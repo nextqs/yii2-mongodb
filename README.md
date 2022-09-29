@@ -29,13 +29,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist yiisoft/yii2-mongodb
+php composer.phar require --prefer-dist nextqs/yii2-mongodb
 ```
 
 or add
 
 ```
-"yiisoft/yii2-mongodb": "~3.0.0"
+"nextqs/yii2-mongodb": "~3.0.1"
 ```
 
 to the `require` section of your `composer.json`.
